@@ -7,8 +7,8 @@ from flask import Flask
 app = Flask(__name__)
 
 ORG_EMAIL = "@gmail.com"
-FROM_EMAIL = "apgokul008" + ORG_EMAIL
-FROM_PWD = "gokul!!8"
+FROM_EMAIL = "username" + ORG_EMAIL # add your username
+FROM_PWD = "password"               # add your password
 SMTP_SERVER = "imap.gmail.com"
 SMTP_PORT = 993
 

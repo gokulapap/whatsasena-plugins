@@ -29,12 +29,12 @@ def read_email_from_gmail():
         first_email_id = int(id_list[0])
         latest_email_id = int(id_list[10])
 
-        res = ''
+        result = ''
 
         print("="*50, '\n')
-        res = res + "---------    *Inbox of {}*    ---------\n\n".format(FROM_EMAIL)
-        res = res + "="*52
-        res = res + "\n\n"
+        result = result + "---------    *Inbox of {}*    ---------\n\n".format(FROM_EMAIL)
+        result = result + "="*52
+        result = result + "\n\n"
         for i in range(latest_email_id, first_email_id, -1):
             data = mail.fetch(str(i), '(RFC822)' )
             for response_part in data:
@@ -43,10 +43,10 @@ def read_email_from_gmail():
                     msg = email.message_from_string(str(arr[1],'utf-8'))
                     email_subject = msg['subject']
                     email_from = msg['from']
-                    res = res + 'From : ' + email_from + '\n'
-                    res = res + 'Subject : ' + email_subject + '\n\n'
-                    res = res + "="*52
-                    res = res + "\n\n"
+                    result = result + 'From : ' + email_from + '\n'
+                    result = result + 'Subject : ' + email_subject + '\n\n'
+                    result = result + "="*52
+                    result = result + "\n\n"
                     print('From : ' + email_from + '\n')
                     print('Subject : ' + email_subject + '\n')
                     print("="*52)
@@ -54,7 +54,7 @@ def read_email_from_gmail():
         traceback.print_exc() 
         print(str(e))
 
-    return res
+    return result
 
 
 if __name__ == "__main__":

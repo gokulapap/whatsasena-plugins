@@ -18,6 +18,7 @@ def home():
 
 @app.route('/readmail')
 def read_email_from_gmail():
+    result = ''
     try:
         mail = imaplib.IMAP4_SSL(SMTP_SERVER)
         mail.login(FROM_EMAIL,FROM_PWD)
@@ -28,8 +29,6 @@ def read_email_from_gmail():
         id_list = mail_ids[0].split()
         first_email_id = int(id_list[0])
         latest_email_id = int(id_list[10])
-
-        result = ''
 
         print("="*50, '\n')
         result = result + "---------    *Inbox of {}*    ---------\n\n".format(FROM_EMAIL)

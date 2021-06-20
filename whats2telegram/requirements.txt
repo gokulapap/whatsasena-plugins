@@ -1,0 +1,4 @@
+flask
+pyTelegramBotAPI
+twilio
+gunicorn
